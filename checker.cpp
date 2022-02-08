@@ -39,8 +39,8 @@ bool batteryIsOk(float temperature, float soc, float chargeRate)
        retValue = isInRange(CurrentVal[i],upperlimits[i],lowerLimits[i]);
        i++;
    }
-   if(retValue != true)
-	cout<<warnings[i-1]<<"\n";
+   //if(retValue != true)
+//	cout<<warnings[i-1]<<"\n";
 	
   return retValue;
 }
