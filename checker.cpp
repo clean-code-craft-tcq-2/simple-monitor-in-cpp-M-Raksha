@@ -28,6 +28,14 @@ void assignCurrValue(int a, int b, int c)
     CurrentVal[CHARGERATE] =c;
 }
 
+void printwarning(bool retVal, int i)
+{
+    if (retVal != false)
+    cout<<"all is well\n";
+    else
+    cout<<warnings[i-1]<<"\n";
+}
+
 bool batteryIsOk(float temperature, float soc, float chargeRate)
 {
     int retValue; 
@@ -39,13 +47,10 @@ bool batteryIsOk(float temperature, float soc, float chargeRate)
        retValue = isInRange(CurrentVal[i],upperlimits[i],lowerLimits[i]);
        i++;
    }
-   //if(retValue != true)
-//	cout<<warnings[i-1]<<"\n";
+   printwarning(retValue,i);
 	
   return retValue;
 }
-
-
 
 int main() {
   assert(batteryIsOk(25, 70, 0.7) == true);
